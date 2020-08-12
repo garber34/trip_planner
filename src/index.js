@@ -1,5 +1,5 @@
 const mapboxgl = require("mapbox-gl");
-const makeMarker = require("./marker.js");
+const makeMarker = require("./marker");
 
 mapboxgl.accessToken = 'pk.eyJ1IjoianBjb29rNzIiLCJhIjoiY2tkcW50aTlnMDU0NzJ1bHE5cGVsenFncyJ9.fIvUQ96AO1UJtqc5-S6Jfw';
 
@@ -13,8 +13,10 @@ const map = new mapboxgl.Map({
 const markerDomEl = document.createElement("div"); // Create a new, detached DIV
 markerDomEl.style.width = "32px";
 markerDomEl.style.height = "39px";
-// markerDomEl.style.backgroundColor = "red";
-markerDomEl.style.backgroundImage = "url(http://i.imgur.com/WbMOfMl.png)";
+markerDomEl.style.backgroundColor = "red";
+//markerDomEl.style.backgroundImage = "url(http://i.imgur.com/WbMOfMl.png)";
 
-new mapboxgl.Marker(markerDomEl).setLngLat([-74.009, 40.705]).addTo(map); // [-87.641, 41.895] for Chicago
-makeMarker('hotel', -74.210, 40.741, map)
+makeMarker('restaurants',-74.009, 40.705).addTo(map); // [-87.641, 41.895] for Chicago
+
+ makeMarker('hotels', -74, 40.739).addTo(map);
+
